@@ -62,3 +62,11 @@ abline(h = 0, col = "red")
 
 hist(residuals(linear_relationship))
 
+plot(data$length_of_song, log10(data$monthly_listeners),
+     xlab="Song Length",
+     ylab="Log10 Monthly Listeners")
+
+abline(lm(log10(monthly_listeners) ~ length_of_song, data=data), col="red")
+
+##find correlation coefficient 
+cor(data$length_of_song, data$monthly_listeners)
